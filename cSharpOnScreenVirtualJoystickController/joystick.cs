@@ -27,6 +27,7 @@ namespace cSharpOnScreenVirtualJoystickController
         int cursorOriginX, cursorOriginY;
         int movingPartX, movingPartY;
         double hypotenuse, angle;
+
         private void joystickArea_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -36,13 +37,12 @@ namespace cSharpOnScreenVirtualJoystickController
                 movingPart.Top = movingPartY;
             }
         }
-        Point merkezeAl = new Point(25, 25);
         private void joystickArea_MouseMove(object sender, MouseEventArgs e)
         {
             hypotenuse = Math.Sqrt(cursorOriginX * cursorOriginX + cursorOriginY * cursorOriginY);
 
-            angle = Math.Acos(cursorOriginY/hypotenuse);
-            if(cursorOriginX<0)
+            angle = Math.Acos(cursorOriginY / hypotenuse);
+            if (cursorOriginX < 0)
             {
                 angle = angle * 180 / Math.PI;
             }
@@ -57,11 +57,9 @@ namespace cSharpOnScreenVirtualJoystickController
             cursorOriginX = e.X - (joystickArea.Width / 2);
             cursorOriginY = e.Y - (joystickArea.Height / 2);
 
-
-            
             if (e.Button == MouseButtons.Left)
             {
-                if (hypotenuse<150)
+                if (hypotenuse < 150)
                 {
                     if (cursorOriginX < 125 && cursorOriginX > -125)//x ekseninde 100 ile -100 arasından çıkartmıyor
                     {
@@ -72,14 +70,12 @@ namespace cSharpOnScreenVirtualJoystickController
                         movingPart.Top = movingPartY;
                     }
                 }
-
-
             }
             else
             {
                 joystickArea_MouseUp(null, null);
             }
-            this.Text = cursorOriginX + " " + cursorOriginY+"   "+movingPartX+" "+movingPartY;
+            this.Text = cursorOriginX + " " + cursorOriginY + "   " + movingPartX + " " + movingPartY;
         }
 
         private void joystickArea_MouseUp(object sender, MouseEventArgs e)

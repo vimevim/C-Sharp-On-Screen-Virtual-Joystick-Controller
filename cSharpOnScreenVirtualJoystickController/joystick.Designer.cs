@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(joystick));
             this.joystickArea = new System.Windows.Forms.Panel();
             this.movingPart = new System.Windows.Forms.PictureBox();
             this.joystickArea.SuspendLayout();
@@ -37,14 +36,13 @@
             // 
             // joystickArea
             // 
-            this.joystickArea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("joystickArea.BackgroundImage")));
+            this.joystickArea.BackgroundImage = global::cSharpOnScreenVirtualJoystickController.Properties.Resources.JoystickOutline_fw;
             this.joystickArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.joystickArea.Controls.Add(this.movingPart);
             this.joystickArea.Location = new System.Drawing.Point(0, 0);
             this.joystickArea.Name = "joystickArea";
             this.joystickArea.Size = new System.Drawing.Size(350, 350);
             this.joystickArea.TabIndex = 3;
-            this.joystickArea.Click += new System.EventHandler(this.joystickArea_Click);
             this.joystickArea.MouseDown += new System.Windows.Forms.MouseEventHandler(this.joystickArea_MouseDown);
             this.joystickArea.MouseMove += new System.Windows.Forms.MouseEventHandler(this.joystickArea_MouseMove);
             this.joystickArea.MouseUp += new System.Windows.Forms.MouseEventHandler(this.joystickArea_MouseUp);
@@ -52,8 +50,9 @@
             // movingPart
             // 
             this.movingPart.BackColor = System.Drawing.Color.Transparent;
+            this.movingPart.BackgroundImage = global::cSharpOnScreenVirtualJoystickController.Properties.Resources.JoystickInner_fw;
+            this.movingPart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.movingPart.Enabled = false;
-            this.movingPart.Image = ((System.Drawing.Image)(resources.GetObject("movingPart.Image")));
             this.movingPart.Location = new System.Drawing.Point(150, 150);
             this.movingPart.Name = "movingPart";
             this.movingPart.Size = new System.Drawing.Size(50, 50);
