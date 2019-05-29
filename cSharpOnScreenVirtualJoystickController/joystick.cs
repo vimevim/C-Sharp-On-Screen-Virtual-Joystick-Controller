@@ -15,7 +15,8 @@ namespace cSharpOnScreenVirtualJoystickController
         public joystick()
         {
             InitializeComponent();
-
+            this.TransparencyKey = this.BackColor;
+            this.Opacity = 0.50; 
         }
 
         private void joystickArea_Click(object sender, EventArgs e)
@@ -36,6 +37,7 @@ namespace cSharpOnScreenVirtualJoystickController
                 movingPart.Left = movingPartX;
                 movingPart.Top = movingPartY;
             }
+            this.Opacity = 0.90;
         }
         private void joystickArea_MouseMove(object sender, MouseEventArgs e)
         {
@@ -82,6 +84,7 @@ namespace cSharpOnScreenVirtualJoystickController
         {
             movingPart.Left = 150;
             movingPart.Top = 150;
+            this.Opacity = 0.50;
         }
     }
 }

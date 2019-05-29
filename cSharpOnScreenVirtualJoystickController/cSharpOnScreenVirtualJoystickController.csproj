@@ -50,9 +50,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonElipse.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="joystick.cs">
       <SubType>Form</SubType>
     </Compile>

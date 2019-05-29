@@ -63,8 +63,10 @@
             // joystick
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(382, 353);
             this.Controls.Add(this.joystickArea);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "joystick";
             this.Text = "joystick";
             this.joystickArea.ResumeLayout(false);
